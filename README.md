@@ -1,6 +1,8 @@
 # Doom fire
 Implementation of the Doom fire with Kotlin and Processing. Based on [Fabien Sanglard's article](http://fabiensanglard.net/doom_fire_psx/).
 
+![demo](doom.gif)
+
 ## Running
 ```bash
 # Compile
@@ -17,4 +19,5 @@ $ java doomfire-1.0-jar-with-dependencies.jar
 ## Issues
  * Processing package is so old but there isn't more recent ones in Maven repositories
  * Fire rescaling is too smooth
+ * Add restart (R) action
  
