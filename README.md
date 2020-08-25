@@ -12,6 +12,8 @@ $ mvn package
 $ java doomfire-1.0-jar-with-dependencies.jar
 ```
 
+Restart the animation pressing the key `R`
+
 ## Requisites
 * Maven 3
 * Java 8
@@ -19,5 +21,4 @@ $ java doomfire-1.0-jar-with-dependencies.jar
 ## Issues
  * Processing package is so old but there isn't more recent ones in Maven repositories
  * Fire rescaling is too smooth
- * Add restart (R) action
  

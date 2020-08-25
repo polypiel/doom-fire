@@ -3,13 +3,14 @@ package com.angelcalvo.doomfire
 import processing.core.PApplet
 import processing.core.PConstants
 import processing.core.PImage
+import processing.event.KeyEvent
 import kotlin.math.roundToInt
 
 /* Based on http://fabiensanglard.net/doom_fire_psx/ */
 class Doom: PApplet() {
 
     private val colors: List<Int> = PALETTE.map { color(it[0].toFloat(), it[1].toFloat(), it[2].toFloat(), it[3].toFloat()) }
-    private var scroll: Float = (HEIGHT * PIXEL_HEIGHT) / 2F + 40
+    private var scroll: Float = SCROLL_INIT
 
     /*
      * fire[0] => Top left
@@ -45,18 +46,23 @@ class Doom: PApplet() {
         if (scroll > -40) {
             scroll -= 2
         } else {
-            for (y in HEIGHT - 8 until HEIGHT) {
-                for (x in 0 until WIDTH) {
-                    val src = y * WIDTH + x
-                    if (fire[src] > BLACK) {
-                        fire[src] = max(fire[src] - random(3f).toInt(), 0)
-                    }
-                }
-            }
+            undoFire()
         }
 
         doFire()
         image(updateImg(), 0f, 0f)
+    }
+
+    override fun keyTyped(event: KeyEvent?) {
+        if (event?.key?.toLowerCase() == 'r') {
+            scroll = SCROLL_INIT
+            for (i in 0 until WIDTH * HEIGHT - 1) {
+                fire[i] = when {
+                    i / WIDTH == HEIGHT - 1 -> WHITE
+                    else -> BLACK
+                }
+            }
+        }
     }
 
     private fun doFire() {
@@ -70,6 +76,17 @@ class Doom: PApplet() {
                     val rand = (Math.random() * 3.0f).roundToInt()
                     val dst = src - rand + 1
                     fire[dst - WIDTH] = max(pixel - max(rand, 1), BLACK)
+                }
+            }
+        }
+    }
+
+    private fun undoFire() {
+        for (y in HEIGHT - 8 until HEIGHT) {
+            for (x in 0 until WIDTH) {
+                val src = y * WIDTH + x
+                if (fire[src] > BLACK) {
+                    fire[src] = max(fire[src] - random(3f).toInt(), 0)
                 }
             }
         }
@@ -133,6 +150,8 @@ class Doom: PApplet() {
         )
         const val BLACK = 0
         const val WHITE = 36
+
+        const val SCROLL_INIT = (HEIGHT * PIXEL_HEIGHT) / 2F + 40
     }
 
 }
