@@ -5,6 +5,7 @@ import processing.core.PConstants
 import processing.core.PImage
 import processing.event.KeyEvent
 import kotlin.math.roundToInt
+import kotlin.math.max as kmax
 
 /* Based on http://fabiensanglard.net/doom_fire_psx/ */
 class Doom: PApplet() {
@@ -75,7 +76,7 @@ class Doom: PApplet() {
                 } else {
                     val rand = (Math.random() * 3.0f).roundToInt()
                     val dst = src - rand + 1
-                    fire[dst - WIDTH] = max(pixel - max(rand, 1), BLACK)
+                    fire[dst - WIDTH] = kmax(pixel - kmax(rand, 1), BLACK)
                 }
             }
         }
@@ -103,6 +104,7 @@ class Doom: PApplet() {
         fireImg.updatePixels()
         return fireImg
     }
+
     companion object {
         const val WIDTH = 400
         const val HEIGHT = 40

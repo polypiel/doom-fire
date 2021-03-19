@@ -8,15 +8,14 @@ Implementation of the Doom fire with Kotlin and Processing. Based on [Fabien San
 # Compile
 $ mvn package
 
-# Run
-$ java doomfire-1.0-jar-with-dependencies.jar
+# Run$ java doomfire-1.0-jar-with-dependencies.jar
 ```
 
 Restart the animation pressing the key `R`
 
 ## Requisites
 * Maven 3
-* Java 8
+* Kotlin 1.4
 
 ## Issues
  * Processing package is so old but there isn't more recent ones in Maven repositories
