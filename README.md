@@ -7,11 +7,11 @@ $ mvn package
 ```
 
 Current implementations:
- * [Processing]()
- * [Java FX]()
+ * [Processing](#processing)
+ * [Java FX](#java-fx)
 
 ## Processing
-![demo](doom.gif)
+![demo](doc/doom.gif)
 
 ### Running
 ```bash
@@ -26,6 +26,7 @@ Restart the animation pressing the key `R`
 
 
 ### Java FX
+![demo](doc/doomfx.gif)
 
 ### Running
 ```bash
