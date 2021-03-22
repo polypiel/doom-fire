@@ -1,24 +1,34 @@
 # Doom fire
-Implementation of the Doom fire with Kotlin and Processing. Based on [Fabien Sanglard's article](http://fabiensanglard.net/doom_fire_psx/).
+Implementation of the Doom fire with Kotlin and several graphic frameworks. Based on [Fabien Sanglard's article](http://fabiensanglard.net/doom_fire_psx/).
 
-![demo](doom.gif)
-
-## Running
+Building with [Maven](https://maven.apache.org/):
 ```bash
-# Compile
 $ mvn package
+```
 
-# Run
-$ java doomfire-1.0-jar-with-dependencies.jar
+Current implementations:
+ * [Processing](#processing)
+ * [Java FX](#java-fx)
+
+## Processing
+![demo](doc/doom.gif)
+
+### Running
+```bash
+$ java -jar doomfire-1.0-jar-with-dependencies.jar processing
 ```
 
 Restart the animation pressing the key `R`
 
-## Requisites
-* Maven 3
-* Java 8
+### Issues
+ * [processing] Processing package is so old but there isn't more recent ones in Maven repositories
+ * [processing] Fire rescaling is too smooth
 
-## Issues
- * Processing package is so old but there isn't more recent ones in Maven repositories
- * Fire rescaling is too smooth
- 
+
+### Java FX
+![demo](doc/doomfx.gif)
+
+### Running
+```bash
+$ java -jar doomfire-1.0-jar-with-dependencies.jar processing
+```
