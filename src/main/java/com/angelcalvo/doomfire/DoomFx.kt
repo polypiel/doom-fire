@@ -11,9 +11,6 @@ import javafx.stage.Stage
 import kotlin.math.max
 import kotlin.math.roundToInt
 
-fun main(args: Array<String>) {
-    Application.launch(DoomFx::class.java, *args)
-}
 
 /* Based on http://fabiensanglard.net/doom_fire_psx/ */
 class DoomFx: Application() {

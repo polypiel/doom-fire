@@ -9,7 +9,7 @@
 	<version>1.0</version>
 
 	<properties>
-		<kotlin.version>1.4.30</kotlin.version>
+		<kotlin.version>1.4.31</kotlin.version>
 	</properties>
 
 	<dependencies>
@@ -77,7 +77,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>com.angelcalvo.doomfire.DoomKt</mainClass>
+									<mainClass>com.angelcalvo.doomfire.MainKt</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>

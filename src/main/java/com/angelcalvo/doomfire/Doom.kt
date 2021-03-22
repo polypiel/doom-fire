@@ -157,7 +157,3 @@ class Doom: PApplet() {
     }
 
 }
-
-fun main() {
-    Doom().run()
-}
