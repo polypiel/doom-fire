@@ -30,5 +30,5 @@ Restart the animation pressing the key `R`
 
 ### Running
 ```bash
-$ java -jar doomfire-1.0-jar-with-dependencies.jar processing
+$ java -jar doomfire-1.0-jar-with-dependencies.jar fx
 ```
